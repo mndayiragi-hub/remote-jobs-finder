@@ -6,7 +6,8 @@ for HOST in 18.133.237.34 35.178.28.140; do
     scp -i "$KEY" index.html style.css app.js deploy/jobs.conf \
         deploy/jobs-cache.conf "ubuntu@$HOST:~/"
     ssh -i "$KEY" "ubuntu@$HOST" 'bash -s' << 'REMOTE'
-sudo mkdir -p /var/www/remote-jobs-finder
+sudo mkdir -p /var/www/remote-jobs-finder /var/cache/nginx/jobs
+sudo chown -R www-data:www-data /var/cache/nginx/jobs
 sudo cp ~/index.html ~/style.css ~/app.js /var/www/remote-jobs-finder/
 sudo cp ~/jobs.conf /etc/nginx/snippets/jobs.conf
 sudo cp ~/jobs-cache.conf /etc/nginx/conf.d/jobs-cache.conf
