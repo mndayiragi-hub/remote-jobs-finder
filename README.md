@@ -62,3 +62,6 @@ http://18.132.13.111/jobs/
 
 ## Credits
 - Job data: [Remotive](https://remotive.com). API docs: https://github.com/remotive-com/remote-jobs-api. Every listing links back to its Remotive page.
+
+## Demo video
+https://www.loom.com/share/30e584e58c76443a90e648da327d8ccc
